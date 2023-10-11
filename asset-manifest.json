@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/react-datepicker-customization-example/static/css/main.dc00f313.css",
-    "main.js": "/react-datepicker-customization-example/static/js/main.57dcc3d5.js",
+    "main.css": "/react-datepicker-customization-example/static/css/main.746ea7e7.css",
+    "main.js": "/react-datepicker-customization-example/static/js/main.dde2736d.js",
     "static/js/787.28cb0dcd.chunk.js": "/react-datepicker-customization-example/static/js/787.28cb0dcd.chunk.js",
+    "static/media/HubotSans-Bold.woff2": "/react-datepicker-customization-example/static/media/HubotSans-Bold.d77b5d84ea940d493988.woff2",
+    "static/media/HubotSans-Regular.woff2": "/react-datepicker-customization-example/static/media/HubotSans-Regular.89d146dafb74b6fe934f.woff2",
+    "static/media/MonaSans-Bold.woff2": "/react-datepicker-customization-example/static/media/MonaSans-Bold.b0efd49a5cd6fc1e1396.woff2",
+    "static/media/MonaSans-Regular.woff2": "/react-datepicker-customization-example/static/media/MonaSans-Regular.3807ab3d762b24b08313.woff2",
     "index.html": "/react-datepicker-customization-example/index.html",
-    "main.dc00f313.css.map": "/react-datepicker-customization-example/static/css/main.dc00f313.css.map",
-    "main.57dcc3d5.js.map": "/react-datepicker-customization-example/static/js/main.57dcc3d5.js.map",
+    "main.746ea7e7.css.map": "/react-datepicker-customization-example/static/css/main.746ea7e7.css.map",
+    "main.dde2736d.js.map": "/react-datepicker-customization-example/static/js/main.dde2736d.js.map",
     "787.28cb0dcd.chunk.js.map": "/react-datepicker-customization-example/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc00f313.css",
-    "static/js/main.57dcc3d5.js"
+    "static/css/main.746ea7e7.css",
+    "static/js/main.dde2736d.js"
   ]
 }
