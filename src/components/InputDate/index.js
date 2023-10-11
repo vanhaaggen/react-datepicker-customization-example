@@ -31,7 +31,7 @@ const InputStyled = styled.input`
   }
 `;
 const IconCalendar = styled(IoCalendarOutline)`
-  color: ${({ isopen }) => (isopen ? "#0CAA8B" : "#676D6F")};
+  color: ${({ isopen }) => (isopen ? "#3388ff" : "#65686d")};
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -44,26 +44,28 @@ const DatePickerIconWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 25px;
-  border-left: 1px solid #c8d9d9;
+  border-left: 1px solid #c9ccd8;
   top: 9px;
   right: 12px;
   cursor: pointer;
 `;
 
 const InputDate = forwardRef((props, ref) => (
-  <Wrapper>
-    <InputStyled
-      type={props.isTimePicker ? "datetime-local" : "date"}
-      ref={ref}
-      {...props}
-    />
-    <DatePickerIconWrapper>
-      <IconCalendar
-        isopen={props.datepickerRef?.current?.state?.open}
-        onClick={props.onClick}
+  <>
+    <Wrapper>
+      <InputStyled
+        type={props.isTimePicker ? "datetime-local" : "date"}
+        ref={ref}
+        {...props}
       />
-    </DatePickerIconWrapper>
-  </Wrapper>
+      <DatePickerIconWrapper>
+        <IconCalendar
+          isopen={props.datepickerRef?.current?.state?.open}
+          onClick={props.onClick}
+        />
+      </DatePickerIconWrapper>
+    </Wrapper>
+  </>
 ));
 
 InputDate.propTypes = {

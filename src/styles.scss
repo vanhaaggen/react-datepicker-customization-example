@@ -1,4 +1,30 @@
+@font-face {
+  font-family: 'Mona Sans';
+  font-weight: normal; /* For regular weight */
+  src: url('./fonts/MonaSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Mona Sans';
+  font-weight: bold; /* For bold weight */
+  src: url('./fonts/MonaSans-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Hubot Sans';
+  font-weight: normal; /* For regular weight */
+  src: url('./fonts/HubotSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Hubot Sans';
+  font-weight: bold; /* For bold weight */
+  src: url('./fonts/HubotSans-Bold.woff2') format('woff2');
+}
+
 @import 'react-datepicker/dist/react-datepicker';
+
+
 
 .time-picker-set.react-datepicker {
   display: flex;
@@ -34,9 +60,9 @@
     }
     &--selected {
       font-weight: 400;
-      background-color: #179f89;
+      background-color: #3388ff;
       &:hover {
-        background-color: #179f89 !important;
+        background-color: #3388ff !important;
       }
     }
     &--keyboard-selected {
@@ -52,9 +78,14 @@
   }
 
   .react-datepicker__day--selected.react-datepicker__day--outside-month {
-    background-color: #179f89;
+    background-color: #3388ff;
     color: #ffffff;
   }
+}
+
+.children-container{
+  display: flex;
+  flex-direction: column;
 }
 
 .react-datepicker-wrapper {

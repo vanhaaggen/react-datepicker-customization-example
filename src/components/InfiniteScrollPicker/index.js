@@ -34,16 +34,16 @@ const ItemStyled = styled(MonthItem)`
   padding: 5px;
   border-radius: 3px;
   &:hover {
-    background-color: #e3f0e8;
+    background-color: #e3e9ef;
   }
 
   ${({ selected }) =>
     selected &&
     css`
-      background-color: #0caa8b;
+      background-color: #3388ff;
       color: #ffffff;
       &:hover {
-        background-color: #0caa8b;
+        background-color: #3388ff;
       }
     `}
   cursor: pointer;

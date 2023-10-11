@@ -1,7 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import DatePicker from "react-datepicker";
 import PropTypes from "prop-types";
-import { PiCaretUpBold, PiCaretDownBold } from "react-icons/pi";
+import { PiCaretUpBold, PiCaretDownBold, PiTrash } from "react-icons/pi";
 import styled, { css } from "styled-components";
 
 import MonthYearSelector from "./MonthYearSelector";
@@ -50,9 +50,14 @@ const ButtonStyled = styled.button`
   align-items: center;
   height: 27px;
   width: 27px;
+  margin-left: 3px;
   border: 1px solid #eff3f3;
   border-radius: 3px;
   background-color: #ffffff;
+  &:hover {
+    background-color: #f3f3f3;
+    color: #2875e0;
+  }
 `;
 
 const MonthYearWrapper = styled.button`
@@ -63,17 +68,26 @@ const MonthYearWrapper = styled.button`
 `;
 
 const MonthYearValue = styled.span`
-  color: #485053;
+  font-family: "Hubot Sans";
+  font-size: 16px;
+  font-weight: 400;
+  color: #30373a;
   margin-right: 5px;
 `;
 
 const Icon = styled.span`
-  color: ${(isexpanded) => (isexpanded ? "#FFFFFF" : "#0C8642")};
   transition: transform 0.2s ease-in-out;
+  cursor: pointer;
 `;
 
 const Carets = styled.span`
-  color: #0c8642;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #3388ff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
 `;
 
 const YearSelector = styled.div`
@@ -90,7 +104,18 @@ const YearSelector = styled.div`
         transform: rotate(180deg);
       }
     `};
-  background-color: ${({ isactive }) => (isactive ? "#0CAA8B" : "#EFF3F3")};
+  ${({ isactive }) =>
+    isactive
+      ? css`
+          background-color: #3388ff;
+          color: #ffffff;
+        `
+      : css`
+          background-color: #ffffff;
+          color: #3388ff;
+          border: 1px solid #3388ff;
+        `};
+
   border-radius: 2px;
 `;
 
@@ -100,7 +125,7 @@ const OptionContainer = styled.div`
   height: 29px;
   margin: 0 20px 10px 20px;
   justify-content: space-between;
-  color: #0c8642;
+  color: #3388ff;
 `;
 
 const OptionDelete = styled.button`
@@ -168,6 +193,10 @@ const GenericCalendar = ({ value, isTimePicker }) => {
     datepickerRef,
     isTimePicker,
   };
+
+  useEffect(() => {
+    datepickerRef?.current?.setOpen(true);
+  }, []);
 
   const handleChangeRaw = (date) => {
     const newRaw = new Date(date.currentTarget.value);
@@ -251,7 +280,7 @@ const GenericCalendar = ({ value, isTimePicker }) => {
                   ).getFullYear()}`}
                 </MonthYearValue>
                 <YearSelector isactive={isMonthYearExpanded}>
-                  <Icon isexpanded={isMonthYearExpanded}>
+                  <Icon isactive={isMonthYearExpanded}>
                     <PiCaretDownBold />
                   </Icon>
                 </YearSelector>
@@ -336,7 +365,7 @@ const GenericCalendar = ({ value, isTimePicker }) => {
           {!isMonthYearExpanded && (
             <>
               <OptionDelete onClick={handleOnDeleteDate}>
-                <Icon icon="erase" size="small" color="#0C8642" />
+                <PiTrash />
                 <span className="ml-2">Delete date</span>
               </OptionDelete>
               <OptionToday onClick={handleOnSelectToday}>
